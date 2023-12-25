@@ -74,7 +74,7 @@ jobs:
       uses: taixw2/deploy-aliyun-oss@v1
       with:
         # aliyun config
-        region: oss-cn-hongkong.aliyuncs.com
+        region: oss-cn-beijing.aliyuncs.com
         access-key-id: ${{ secrets.ACCESS_KEY_ID }}
         access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
         bucket: ${{ secrets.BUCKET }}
