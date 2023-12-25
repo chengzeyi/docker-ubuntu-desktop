@@ -71,7 +71,7 @@ jobs:
       run: |
         docker save ${{ env.IMAGE_NAME }} -o ${{ env.IMAGE_FILENAME }}
     - name: Upload to OSS
-      uses: taixw2/deploy-aliyun-oss@v1
+      uses: taixw2/deploy-aliyun-oss@master
       with:
         # aliyun config
         region: oss-cn-beijing.aliyuncs.com
