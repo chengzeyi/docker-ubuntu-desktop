@@ -32,8 +32,8 @@ jobs:
     env:
       UBUNTU_VERSION: ${{ github.event.inputs.version }}
       CUDA_VERSION: ${{ github.event.inputs.cuda_version }}
-      IMAGE_NAME: ${{ github.repository_owner }}/ubuntu-desktop:${{ env.UBUNTU_VERSION }}-cu${{ env.CUDA_VERSION }}
-      IMAGE_FILENAME: ubuntu-desktop-${{ env.UBUNTU_VERSION }}-cu${{ env.CUDA_VERSION }}.tar
+      IMAGE_NAME: ${{ github.repository_owner }}/ubuntu-desktop:${{ github.event.inputs.version }}-cu${{ github.event.inputs.cuda_version }}
+      IMAGE_FILENAME: ubuntu-desktop-${{ github.event.inputs.version }}-cu${{ github.event.inputs.cuda_version }}.tar
     steps:
     - name: Checkout
       uses: actions/checkout@v4
