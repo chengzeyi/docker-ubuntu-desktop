@@ -57,7 +57,8 @@ jobs:
       with:
         context: ubuntu-desktop
         file: ubuntu-desktop/${{env.UBUNTU_VERSION}}/Dockerfile
-        platforms: linux/amd64,linux/arm64
+        # platforms: linux/amd64,linux/arm64
+        platforms: linux/amd64
         build-args: |
           BASE_IMAGE=nvidia/cuda:${{env.CUDA_VERSION}}-devel-ubuntu${{env.UBUNTU_VERSION}}
         push: false
