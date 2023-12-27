@@ -25,18 +25,18 @@ sudo update-alternatives --set vim /usr/bin/nvim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --set editor /usr/bin/nvim
 
-# Install NodeJS
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo apt autoremove -y && sudo apt clean
+# # Install NodeJS
+# curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+# sudo apt install -y nodejs
+# sudo apt autoremove -y && sudo apt clean
 
-# Install CFW
-curl https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz | tar -xz
-mv Clash\ for\ Windows-*-x64-linux/ cfw
-# sudo rm -rf /etc/cfw
-# sudo rm /usr/local/bin/cfw
-sudo mv cfw /etc/cfw
-sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
+# # Install CFW
+# curl https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz | tar -xz
+# mv Clash\ for\ Windows-*-x64-linux/ cfw
+# # sudo rm -rf /etc/cfw
+# # sudo rm /usr/local/bin/cfw
+# sudo mv cfw /etc/cfw
+# sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
 
 # Use apt mirror
 UBUNTU_DISTRO=$(lsb_release -cs)
@@ -47,5 +47,5 @@ sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ ${UBUNTU_DISTRO}-bac
 sudo echo "deb http://security.ubuntu.com/ubuntu/ ${UBUNTU_DISTRO}-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 # Use pip mirror
-python3 -m pip install --upgrade pip
+# python3 -m pip install --upgrade pip
 python3 -m pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
