@@ -1,5 +1,8 @@
 set -e
 
+# Install snap
+sudo apt-get install -y snapd
+
 # Install Vscode.
 sudo apt-get install -y wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -16,11 +19,11 @@ sudo apt-get install -y neovim
 sudo apt-get install -y python3-dev python3-pip
 
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
+sudo update-alternatives --set vi /usr/bin/nvim
 sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
+sudo update-alternatives --set vim /usr/bin/nvim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-sudo update-alternatives --config editor
+sudo update-alternatives --set editor /usr/bin/nvim
 
 # Install NodeJS
 sudo snap install node --classic --channel=20
