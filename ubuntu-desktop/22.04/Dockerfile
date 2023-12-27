@@ -84,6 +84,9 @@ RUN bash /docker_config/install_nomachine.sh &&\
     sed -i '/AudioInterface pipewire/c\AudioInterface pulseaudio' /usr/NX/etc/node.cfg  &&\
     sed -i '/CommandStartPulseAudio/c\CommandStartPulseAudio "/usr/bin/pulseaudio --high-priority=no"' /usr/NX/etc/node.cfg
 
+# Post-install
+RUN bash /docker_config/post_install.sh
+
 ## Configure ssh 
 RUN mkdir /var/run/sshd &&  \
     echo 'root:THEPASSWORDYOUCREATED' | chpasswd && \

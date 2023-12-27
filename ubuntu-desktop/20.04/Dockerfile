@@ -78,6 +78,9 @@ RUN bash /docker_config/install_nomachine.sh &&\
     sed -i "s|#EnableClipboard both|EnableClipboard both |g" /usr/NX/etc/server.cfg &&\
     sed -i '/DefaultDesktopCommand/c\DefaultDesktopCommand "xset s off && /usr/bin/startxfce4"' /usr/NX/etc/node.cfg
 
+# Post-install
+RUN bash /docker_config/post_install.sh
+
 ## Configure ssh
 RUN mkdir /var/run/sshd &&  \
     echo 'root:THEPASSWORDYOUCREATED' | chpasswd && \
