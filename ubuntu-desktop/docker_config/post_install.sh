@@ -23,16 +23,7 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
 
 # Install NodeJS
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-
-NODE_MAJOR=20
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-
-sudo apt-get update
-sudo apt-get install nodejs -y
+sudo snap install node --classic --channel=20
 
 # Install CFW
 curl https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz | tar -xz
@@ -42,12 +33,15 @@ mv Clash\ for\ Windows-*-x64-linux/ cfw
 sudo mv cfw /etc/cfw
 sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
 
+sudo apt autoremove -y
+
 # Use apt mirror
-mv /etc/apt/sources.list /etc/apt/sources.list.bak
-echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse" > /etc/apt/sources.list
-echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse" >> /etc/apt/sources.list
-echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse" >> /etc/apt/sources.list
-echo "deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse" >> /etc/apt/sources.list
+UBUNTU_DISTRO=$(lsb_release -cs)
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ ${UBUNTU_DISTRO} main restricted universe multiverse" > /etc/apt/sources.list
+sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ ${UBUNTU_DISTRO}-updates main restricted universe multiverse" >> /etc/apt/sources.list
+sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ ${UBUNTU_DISTRO}-backports main restricted universe multiverse" >> /etc/apt/sources.list
+sudo echo "deb http://security.ubuntu.com/ubuntu/ ${UBUNTU_DISTRO}-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 # Use pip mirror
 python3 -m pip install --upgrade pip
