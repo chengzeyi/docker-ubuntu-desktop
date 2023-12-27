@@ -22,9 +22,9 @@ sudo update-alternatives --set vim /usr/bin/nvim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --set editor /usr/bin/nvim
 
-# Install NodeJS
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
+# # Install NodeJS
+# curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+# sudo apt install -y nodejs
 
 # Install CFW
 curl https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz | tar -xz
