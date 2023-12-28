@@ -38,6 +38,7 @@ mv Clash\ for\ Windows-*-x64-linux/ cfw
 # sudo rm /usr/local/bin/cfw
 sudo mv cfw /etc/cfw
 sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
+rm -f Clash.for.Windows-0.20.39-x64-linux.tar.gz
 
 # Use apt mirror
 UBUNTU_DISTRO=$(lsb_release -cs)
