@@ -30,13 +30,14 @@ sudo update-alternatives --set editor /usr/bin/nvim
 # sudo apt install -y nodejs
 # sudo apt autoremove -y && sudo apt clean
 
-# # Install CFW
-# curl https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz | tar -xz
-# mv Clash\ for\ Windows-*-x64-linux/ cfw
-# # sudo rm -rf /etc/cfw
-# # sudo rm /usr/local/bin/cfw
-# sudo mv cfw /etc/cfw
-# sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
+# Install CFW
+wget https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz
+tar -xzf Clash.for.Windows-0.20.39-x64-linux.tar.gz
+mv Clash\ for\ Windows-*-x64-linux/ cfw
+# sudo rm -rf /etc/cfw
+# sudo rm /usr/local/bin/cfw
+sudo mv cfw /etc/cfw
+sudo ln -s /etc/cfw/cfw /usr/local/bin/cfw
 
 # Use apt mirror
 UBUNTU_DISTRO=$(lsb_release -cs)
