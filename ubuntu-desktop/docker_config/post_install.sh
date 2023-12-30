@@ -8,11 +8,11 @@ sudo service snapd start
 # sudo systemctl start snapd.service
 sudo snap install core
 
-# Install chezmoi
-sudo snap install chezmoi --classic
+# # Install chezmoi
+# sudo snap install chezmoi --classic
 
-# Install node
-sudo snap install node --classic
+# # Install node
+# sudo snap install node --classic
 
 # Install GitHub CLI
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
