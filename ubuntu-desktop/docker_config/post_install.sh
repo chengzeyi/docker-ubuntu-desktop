@@ -3,7 +3,10 @@ set -e
 sudo apt autoremove -y && sudo apt clean
 
 # Install snapd
-sudo apt update && sudo apt install snapd -y && sudo service snapd start && sudo snap install core
+sudo apt update && sudo apt install snapd -y
+sudo service snapd start
+sudo systemctl start snapd.service
+sudo snap install core
 
 # Install chezmoi
 sudo snap install chezmoi --classic
