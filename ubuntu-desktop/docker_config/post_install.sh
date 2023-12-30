@@ -2,18 +2,6 @@ set -e
 
 sudo apt autoremove -y && sudo apt clean
 
-# Install snapd
-sudo apt update && sudo apt install snapd -y
-sudo service snapd start
-# sudo systemctl start snapd.service
-sudo snap install core
-
-# # Install chezmoi
-# sudo snap install chezmoi --classic
-
-# # Install node
-# sudo snap install node --classic
-
 # Install GitHub CLI
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
