@@ -18,11 +18,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packag
 rm -f packages.microsoft.gpg
 
 # Install Neovim.
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install -y neovim
-sudo apt autoremove -y && sudo apt clean
+sudo wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.appimage -O /usr/bin/nvim
 
 # sudo apt-get install -y python3-dev python3-pip
 
