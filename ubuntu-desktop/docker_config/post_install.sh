@@ -19,6 +19,7 @@ rm -f packages.microsoft.gpg
 
 # Install Neovim.
 sudo wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.appimage -O /usr/bin/nvim
+sudo chmod a+x /usr/bin/nvim
 
 # sudo apt-get install -y python3-dev python3-pip
 
